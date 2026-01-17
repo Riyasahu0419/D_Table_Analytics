@@ -217,7 +217,7 @@ const Header: React.FC = () => {
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto gap-1">
             <li>
-              <a href="#" className="nav-pill">
+              <a href="/certificate" className="nav-pill">
                 Certificate
               </a>
             </li>
