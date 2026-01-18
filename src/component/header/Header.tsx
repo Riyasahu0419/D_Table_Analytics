@@ -694,7 +694,7 @@ const Header: React.FC = () => {
         scrolled ? "header-scrolled" : ""
       }`}
     >
-      <div className="container">
+      <div className="container p-2">
         {/* Logo */}
         <Link className="navbar-brand" to="/" onClick={closeMobileMenu}>
           <img src="./media/logo/logo.png" alt="Smart IT Box" height={42} />
