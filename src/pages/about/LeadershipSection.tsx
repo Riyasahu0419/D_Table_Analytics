@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Card} from 'react-bootstrap';
 import { FaLinkedinIn, FaEnvelope } from 'react-icons/fa'; // npm install react-icons
 
 export const LeadershipSection: React.FC = () => {

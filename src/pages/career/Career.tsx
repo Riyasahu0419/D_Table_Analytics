@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
-import { FaArrowRight, FaBolt, FaBriefcase, FaBullseye, FaClock, FaDollarSign, FaGraduationCap, FaHeartbeat, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
+import { Container} from "react-bootstrap";
+import { FaArrowRight, FaBolt, FaBriefcase, FaClock, FaDollarSign, FaGraduationCap, FaHeartbeat, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 
-import { MdArrowOutward, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import './Career.css'
 const Career: React.FC = () => {
   return (

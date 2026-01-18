@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import ContactForm from "./ContactForm";
 
 const Contact: React.FC = () => {

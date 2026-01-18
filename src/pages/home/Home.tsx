@@ -1,4 +1,4 @@
-import App from "../about/About";
+
 import BusinessAutomation from "./blocks/BusinessAutomation ";
 import CoreOfferings from "./blocks/CoreOfferings";
 import HeroSection from "./blocks/HeroSection";

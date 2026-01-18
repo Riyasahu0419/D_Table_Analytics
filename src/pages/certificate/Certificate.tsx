@@ -109,7 +109,7 @@
 
 // export default Certificate;
 
-import React from "react";
+
 import "./Certificate.css";
 const Certificate = () => {
 const certificates = [

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect } from "react";
 
 import { MdArrowOutward, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const HeroSection: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [currentStat, setCurrentStat] = useState(0);
-  const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
+ 
 
   const targetStats = [750, 2400, 1200, 98];
 

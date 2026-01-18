@@ -1,17 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
-import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-const leaders = [
-  {
-    name: "Alexandra Chen",
-    role: "Chief Executive Officer",
-    loc: "San Francisco, CA",
-    desc: "Former Google executive with 15+ years in technology leadership, specializing in scaling high-growth companies.",
-    tags: ["Digital Transformation", "Growth Strategy", "Enterprise Leadership"]
-  },
-  // Add Marcus and Sarah here...
-];
+
+
 
 export const Leadership: React.FC = () => {
  return (

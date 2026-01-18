@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import TermsAndConditions from "./TermsAndConditions";
 
 

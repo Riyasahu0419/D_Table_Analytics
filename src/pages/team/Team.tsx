@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { FaBullseye } from "react-icons/fa";
 import TeamSection from "./TeamSection";
 import { MdArrowOutward, MdOutlineKeyboardArrowRight } from "react-icons/md";

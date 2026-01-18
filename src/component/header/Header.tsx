@@ -50,7 +50,7 @@
 import React, { useState } from "react";
 import { FiSearch, FiChevronDown } from "react-icons/fi";
 import {
-  FaCode,
+  
   FaUsers,
   FaAward,
   FaFileAlt,
@@ -59,16 +59,15 @@ import {
   FaBalanceScale,
   FaPhone,
   FaLightbulb,
-  FaCogs,
-  FaHeadphones,
+ 
   FaFlask,
   FaPalette,
-  FaCloud,
+  
   FaLock,
-  FaChartLine,
+ 
   FaDatabase,
   FaMobile,
-  FaGlobe,
+ 
   FaRegUserCircle,
 } from "react-icons/fa";
 import "./header.css";
@@ -227,7 +226,7 @@ const navigate=useNavigate()
     setActiveDropdown(null);
   };
 
-  
+
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top header-navbar">

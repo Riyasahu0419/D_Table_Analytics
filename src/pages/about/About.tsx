@@ -1,51 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import "./About.css";
-import { FaBullseye, FaHeart, FaUsers } from "react-icons/fa";
+
 import ValuesSection from "./ValuesSection";
 import TimelineSection from "./TimelineData";
 import { LeadershipSection } from "./LeadershipSection";
 
 const AboutPage: React.FC = () => {
-  const timelineData = [
-    {
-      year: "2015",
-      title: "Foundation & Vision",
-      text: "Established with a bold vision to redefine business automation.",
-    },
-    {
-      year: "2017",
-      title: "Enterprise Breakthrough",
-      text: "Secured our first Fortune 500 client.",
-    },
-    {
-      year: "2019",
-      title: "Platform Revolution",
-      text: "Launched our comprehensive automation suite.",
-    },
-  ];
-
-  const values = [
-    {
-      title: "Customer-Centric Approach",
-      text: "We put our clients at the heart of everything we do, ensuring their success is our top priority.",
-      icon: <FaHeart />,
-      bg: "value-yellow",
-    },
-    {
-      title: "Excellence in Execution",
-      text: "We deliver high-quality solutions with precision, attention to detail, and commitment to excellence.",
-      icon: <FaBullseye />,
-      bg: "value-blue",
-    },
-    {
-      title: "Collaborative Teamwork",
-      text: "We believe in the power of collaboration, working together to achieve extraordinary results.",
-      icon: <FaUsers />,
-      bg: "value-orange",
-    },
-  ];
-
   return (
     <div className="about-wrapper">
       {/* HERO */}
@@ -74,7 +35,9 @@ const AboutPage: React.FC = () => {
           </p>
 
           {/* <Button className="btn-yellow">Meet Our Team</Button> */}
-           <button className="footer-btn px-4" style={{borderRadius:"30px"}}>Meet Our Team</button>
+          <button className="footer-btn px-4" style={{ borderRadius: "30px" }}>
+            Meet Our Team
+          </button>
         </Container>
       </section>
 
@@ -125,7 +88,7 @@ const AboutPage: React.FC = () => {
         </Container>
       </section> */}
 
-      <TimelineSection/>
+      <TimelineSection />
 
       {/* VALUES */}
       {/* <section className="about-section light ">
@@ -164,11 +127,11 @@ const AboutPage: React.FC = () => {
         </Container>
       </section> */}
 
-      <ValuesSection/>
+      <ValuesSection />
 
       {/* LEADERSHIP */}
 
-      <LeadershipSection/>
+      <LeadershipSection />
       {/* <section className="about-section">
         <Container>
           <div className="section-header">
@@ -208,53 +171,3 @@ const AboutPage: React.FC = () => {
 
 export default AboutPage;
 
-/* ------------------ */
-const TimelineItem = ({ year, title, text, left }: any) => (
-  <Row className={`timeline-item ${left ? "left" : ""}`}>
-    <Col md={5}>
-      {left && (
-        <Card className="timeline-card">
-          <h5>{title}</h5>
-          <p>{text}</p>
-        </Card>
-      )}
-    </Col>
-
-    <Col md={2} className="timeline-year">
-      <span>{year}</span>
-    </Col>
-
-    <Col md={5}>
-      {!left && (
-        <Card className="timeline-card">
-          <h5>{title}</h5>
-          <p>{text}</p>
-        </Card>
-      )}
-    </Col>
-  </Row>
-);
-
-const leaders = [
-  {
-    name: "Alexandra Chen",
-    role: "Chief Executive Officer",
-    loc: "San Francisco, CA",
-    desc: "Former Google executive with 15+ years in technology leadership.",
-    tags: ["Digital Transformation", "Growth Strategy"],
-  },
-  {
-    name: "Marcus Rodriguez",
-    role: "Chief Technology Officer",
-    loc: "Boston, MA",
-    desc: "AI & ML pioneer with scalable platform expertise.",
-    tags: ["AI", "Cloud Architecture"],
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Chief Marketing Officer",
-    loc: "New York, NY",
-    desc: "Award-winning marketer with Apple & Nike experience.",
-    tags: ["Brand Strategy", "Growth Marketing"],
-  },
-];

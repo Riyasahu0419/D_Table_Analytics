@@ -107,7 +107,7 @@
 
 // export default BusinessAutomation;
 
-import React from "react";
+
 import { MdArrowOutward } from "react-icons/md";
 
 const BusinessAutomation = () => {
