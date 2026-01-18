@@ -70,7 +70,7 @@ import {
  
   FaRegUserCircle,
 } from "react-icons/fa";
-import "./header.css";
+import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
 const servicesData = [
