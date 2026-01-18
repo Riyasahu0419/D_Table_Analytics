@@ -382,7 +382,7 @@ const HeroSection: React.FC = () => {
           borderRadius: "15px",
         }}
       >
-        <h4 className="fw-bold mb-3">Web Design</h4>
+        <h4 className="fw-bold my-4">Web Design</h4>
         <div
           className="mx-auto mb-3"
           style={{
@@ -408,7 +408,7 @@ const HeroSection: React.FC = () => {
           borderRadius: "15px",
         }}
       >
-        <h4 className="fw-bold mb-3">Digital Transformation</h4>
+        <h4 className="fw-bold my-4">Digital Transformation</h4>
         <div
           className="mx-auto mb-3"
           style={{
