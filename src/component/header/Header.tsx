@@ -69,17 +69,12 @@ import {
   FaDatabase,
   FaMobile,
   FaGlobe,
+  FaRegUserCircle,
 } from "react-icons/fa";
 import "./header.css";
+import { useNavigate } from "react-router-dom";
 
 const servicesData = [
-  {
-    icon: <FaCode />,
-    title: "Custom Software Development",
-    description:
-      "Tailored software solutions built to meet your specific business requirements",
-    features: ["Web Applications", "Desktop Applications", "API Development"],
-  },
   {
     icon: <FaUsers />,
     title: "IT Consulting",
@@ -87,28 +82,7 @@ const servicesData = [
       "Strategic technology advisory to optimize your IT infrastructure and processes",
     features: ["Technology Audit", "Digital Strategy", "Process Optimization"],
   },
-  {
-    icon: <FaCogs />,
-    title: "DevOps & Automation",
-    description:
-      "Streamline your development and deployment processes with CI/CD pipelines",
-    features: [
-      "CI/CD Pipeline Setup",
-      "Containerization",
-      "Infrastructure as Code",
-    ],
-  },
-  {
-    icon: <FaHeadphones />,
-    title: "24/7 Support & Maintenance",
-    description:
-      "Round-the-clock technical support and proactive system maintenance",
-    features: [
-      "Proactive Monitoring",
-      "Incident Management",
-      "Performance Optimization",
-    ],
-  },
+
   {
     icon: <FaFlask />,
     title: "QA & Testing",
@@ -121,13 +95,7 @@ const servicesData = [
     description: "User-centered design solutions that enhance user experience",
     features: ["User Research", "Wireframing", "Prototyping"],
   },
-  {
-    icon: <FaCloud />,
-    title: "Cloud Infrastructure",
-    description:
-      "Scalable cloud solutions with AWS, Azure, and Google Cloud platform integration",
-    features: ["Cloud Migration", "Infrastructure Setup", "Cloud Optimization"],
-  },
+
   {
     icon: <FaLock />,
     title: "Cybersecurity",
@@ -139,13 +107,7 @@ const servicesData = [
       "Compliance Management",
     ],
   },
-  {
-    icon: <FaChartLine />,
-    title: "Digital Transformation",
-    description:
-      "Modernize your business processes with cutting-edge digital solutions",
-    features: ["Process Automation", "Digital Strategy", "Change Management"],
-  },
+
   {
     icon: <FaDatabase />,
     title: "Data Analytics",
@@ -164,29 +126,99 @@ const servicesData = [
       "Cross-platform mobile applications for iOS and Android ecosystems",
     features: ["Native Apps", "Hybrid Apps", "Progressive Web Apps"],
   },
-  {
-    icon: <FaGlobe />,
-    title: "Web Development",
-    description:
-      "Responsive and scalable web applications with modern frameworks",
-    features: ["React/Angular/Vue", "Backend Development", "API Integration"],
-  },
 ];
 
 const companyData = [
-  { icon: <FaAward />, title: "About Us" },
-  { icon: <FaUsers />, title: "Our Team" },
-  { icon: <FaLightbulb />, title: "Careers" },
-  { icon: <FaFileAlt />, title: "Case Studies" },
-  { icon: <FaComments />, title: "Blogs" },
-  { icon: <FaShieldAlt />, title: "Privacy Policy" },
-  { icon: <FaBalanceScale />, title: "Terms of Service" },
-  { icon: <FaPhone />, title: "Contact Us" },
+  {
+    icon: <FaAward />,
+    title: "About Us",
+    path: "/about",
+  },
+  {
+    icon: <FaUsers />,
+    title: "Our Team",
+    path: "/team",
+  },
+  {
+    icon: <FaLightbulb />,
+    title: "Careers",
+    path: "/career",
+  },
+  {
+    icon: <FaFileAlt />,
+    title: "Case Studies",
+    path: "/case-studies",
+  },
+  {
+    icon: <FaComments />,
+    title: "Blogs",
+    path: "/blogs",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Privacy Policy",
+    path: "/privacy-policy",
+  },
+  {
+    icon: <FaBalanceScale />,
+    title: "Terms of Service",
+    path: "/policies/terms",
+  },
+  {
+    icon: <FaPhone />,
+    title: "Contact Us",
+    path: "/contact",
+  },
 ];
+
+
+const ProductData = [
+  {
+    icon: <FaAward />,
+    title: "Enterprise Solutions",
+    description: "Scalable and secure software solutions for growing businesses",
+  },
+  {
+    icon: <FaUsers />,
+    title: "Team Collaboration Suite",
+    description: "Tools that empower teams to collaborate and work efficiently",
+  },
+  {
+    icon: <FaLightbulb />,
+    title: "Innovation Platform",
+    description: "Smart platforms designed to accelerate digital innovation",
+  },
+  {
+    icon: <FaFileAlt />,
+    title: "Business Intelligence",
+    description: "Data-driven insights to improve decision-making and growth",
+  },
+  {
+    icon: <FaComments />,
+    title: "Customer Engagement",
+    description: "Solutions that enhance communication and customer experience",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Security & Compliance",
+    description: "Advanced protection and compliance for critical business data",
+  },
+  {
+    icon: <FaBalanceScale />,
+    title: "Governance & Risk",
+    description: "Tools to manage policies, risk, and operational compliance",
+  },
+  {
+    icon: <FaPhone />,
+    title: "Support & Communication",
+    description: "Integrated support systems for seamless customer interaction",
+  },
+];
+
 
 const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
+const navigate=useNavigate()
   const toggleDropdown = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
@@ -194,6 +226,8 @@ const Header: React.FC = () => {
   const closeDropdown = () => {
     setActiveDropdown(null);
   };
+
+  
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top header-navbar">
@@ -221,10 +255,87 @@ const Header: React.FC = () => {
                 Certificate
               </a>
             </li>
-            <li>
-              <a href="#" className="nav-pill">
-                Products
+            <li className="dropdown">
+              <a
+                href="#"
+                className={`nav-pill ${
+                  activeDropdown === "product" ? "active" : ""
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleDropdown("product");
+                }}
+              >
+                Product
+                <FiChevronDown
+                  size={16}
+                  className={`dropdown-icon ${
+                    activeDropdown === "product" ? "rotate" : ""
+                  }`}
+                />
               </a>
+              {activeDropdown === "product" && (
+                <div className="mega-dropdown-product company-dropdown mt-1">
+                  <div className="mega-dropdown-content container-fluid">
+                    <div className="row g-4 align-items-stretch">
+                      {/* LEFT: 3-column card grid */}
+                      <div className="col-8">
+                        <div className="row g-4">
+                          {ProductData.map((item, index) => (
+                            <div key={index} className="col-6">
+                              <a
+                                href="#"
+                                className="company-card d-flex align-items-start gap-3 p-3 h-100 text-decoration-none border rounded-3"
+                              >
+                                <div className="company-icon">{item.icon}</div>
+
+                                <div className="company-content">
+                                  <h6 className="mb-1 text-black">
+                                    {item.title}
+                                  </h6>
+
+                                  <p className="small text-muted mb-1">
+                                    {item.description}
+                                  </p>
+                                  <span className="text-[#d4a017] fw-medium">
+                                    Learn more →
+                                  </span>
+                                </div>
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* RIGHT: Feature column */}
+                      <div className="col-4">
+                        <div className="company-feature d-flex flex-column align-items-center text-center p-4 rounded-4 text-white">
+                          <div className=" mb-3">
+                            <FaLightbulb size={28} />
+                          </div>
+
+                          <div>
+                            <h4 className="fw-bold">
+                              Innovation Lab
+                            </h4>
+
+                            <p className="small my-3">
+                            Experience the future of digital transformation with our adaptive AI solutions that learn and scale in real-time.
+                            </p>
+                          </div>
+
+                          <a
+                            href="#"
+                            className="btn btn-light fw-semibold mt-4"
+                          >
+                            Explore Innovation →
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </li>
 
             {/* Services Dropdown */}
@@ -248,25 +359,46 @@ const Header: React.FC = () => {
                 />
               </a>
               {activeDropdown === "services" && (
-                <div className="mega-dropdown services-dropdown">
+                <div className="mega-dropdown-service services-dropdown mt-1">
                   <div className="mega-dropdown-content">
-                    <div className="services-grid">
+                    <div className="services-grid row g-4">
                       {servicesData.map((service, index) => (
-                        <div key={index} className="service-card">
-                          <div className="service-icon">{service.icon}</div>
-                          <div className="service-content">
-                            <h3>{service.title}</h3>
-                            <p>{service.description}</p>
-                            <ul className="service-features">
-                              {service.features.map((feature, idx) => (
-                                <li key={idx}>
-                                  <span>●</span> {feature}
-                                </li>
-                              ))}
-                            </ul>
-                            <a href="#" className="service-link">
-                              Learn more →
-                            </a>
+                        <div key={index} className="col-lg-3 col-md-6">
+                          <div className="service-card h-100">
+                            <div className="d-flex align-items-center gap-2 mb-2">
+                              <div className="service-icon">{service.icon}</div>
+
+                              <h5 className="fw-bold">{service.title}</h5>
+                            </div>
+
+                            <div className="service-content">
+                              <p className="text-muted mb-3">
+                                {service.description}
+                              </p>
+
+                              <ul className="service-features list-unstyled mb-4">
+                                {service.features.map((feature, idx) => (
+                                  <li key={idx}>
+                                    <span className="dot"></span>
+                                    {feature}
+                                  </li>
+                                ))}
+                              </ul>
+                              <hr
+                                style={{
+                                  // width: "48px",
+                                  height: "0.5px",
+                                  backgroundColor: "#f4b400",
+                                  border: "none",
+                                  // margin: "16px 0",
+                                  opacity: 0.2,
+                                }}
+                              />
+
+                              <a href="#" className="service-link">
+                                Learn more →
+                              </a>
+                            </div>
                           </div>
                         </div>
                       ))}
@@ -297,7 +429,7 @@ const Header: React.FC = () => {
                 />
               </a>
               {activeDropdown === "company" && (
-                <div className="mega-dropdown company-dropdown">
+                <div className="mega-dropdown company-dropdown mt-1">
                   <div className="mega-dropdown-content container-fluid">
                     <div className="row g-4 align-items-stretch">
                       {/* LEFT: 3-column card grid */}
@@ -306,14 +438,16 @@ const Header: React.FC = () => {
                           {companyData.map((item, index) => (
                             <div key={index} className="col-4">
                               <a
-                                href="#"
+                                href={item.path}
                                 className="company-card d-flex align-items-start gap-3 p-3 h-100 text-decoration-none border rounded-3"
                               >
                                 <div className="company-icon">{item.icon}</div>
 
                                 <div className="company-content">
-                                  <h6 className="mb-1">{item.title}</h6>
-                                  <span className="text-warning fw-medium">
+                                  <h6 className="mb-1 text-black">
+                                    {item.title}
+                                  </h6>
+                                  <span className="text-[#d4a017] fw-medium">
                                     Learn more →
                                   </span>
                                 </div>
@@ -325,8 +459,8 @@ const Header: React.FC = () => {
 
                       {/* RIGHT: Feature column */}
                       <div className="col-3">
-                        <div className="company-feature h-100 d-flex flex-column justify-content-between p-4 rounded-4 text-white bg-warning">
-                          <div className="company-feature-icon mb-3">
+                        <div className="company-feature d-flex flex-column align-items-center text-center p-3 rounded-4 text-white">
+                          <div className=" mb-3">
                             <FaLightbulb size={28} />
                           </div>
 
@@ -334,6 +468,7 @@ const Header: React.FC = () => {
                             <h4 className="fw-bold">
                               Driving Digital Innovation
                             </h4>
+
                             <p className="small mt-3">
                               With over a decade of experience, we help
                               businesses transform through technology. Our team
@@ -343,7 +478,7 @@ const Header: React.FC = () => {
 
                           <a
                             href="#"
-                            className="btn btn-light fw-semibold mt-4 align-self-start"
+                            className="btn btn-light fw-semibold mt-4"
                           >
                             Learn Our Story →
                           </a>
@@ -356,6 +491,12 @@ const Header: React.FC = () => {
             </li>
           </ul>
 
+          
+          <FaRegUserCircle 
+          onClick={()=>navigate("/sign-up")}
+            size={20}
+            style={{ cursor: "pointer", marginRight: "12px" }}
+          />
           <FiSearch
             size={20}
             style={{ cursor: "pointer", marginRight: "12px" }}
@@ -363,6 +504,8 @@ const Header: React.FC = () => {
           <a href="/contact" className="nav-pill nav-pill-cta">
             Talk to us →
           </a>
+
+          
         </div>
       </div>
 

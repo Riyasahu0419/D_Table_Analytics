@@ -112,43 +112,90 @@
 import React from "react";
 import "./Certificate.css";
 const Certificate = () => {
-  const certificates = [
-    {
-      company: "INSTAA TOOL",
-      type: "Certificate of Appreciation",
-      img: "./media/certificate/c1.jpg",
-    },
-    {
-      company: "AVANTI Overseas Pvt. Ltd.",
-      type: "Certificate of Appreciation",
-      img: "./media/certificate/c2.jpg",
-    },
-    {
-      company: "RMC Switchgears Ltd.",
-      type: "Certificate of Appreciation",
-      img: "./media/certificate/c3.jpg",
-    },
-    {
-      company: "RMC Switchgears Ltd.",
-      type: "Certificate of Appreciation",
-      img: "./media/certificate/c4.jpg",
-    },
-    {
-      company: "RMC Switchgears Ltd.",
-      type: "Certificate of Appreciation",
-      img: "./media/certificate/c5.jpg",
-    },
-  ];
+const certificates = [
+  {
+    company: "INSTAA TOOL",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c1.jpg",
+  },
+  {
+    company: "AVANTI Overseas Pvt. Ltd.",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c2.jpg",
+  },
+  {
+    company: "RMC Switchgears Ltd.",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c3.jpg",
+  },
+  {
+    company: "Paramount Products Pvt. Ltd.",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c4.jpg",
+  },
+  {
+    company: "DNS Concrete LLP",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c5.jpg",
+  },
+  {
+    company: "R Khurana & Associates",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c1.jpg",
+  },
+  {
+    company: "Greenfield Industries",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c2.jpg",
+    active: true,
+  },
+  {
+    company: "Apex Engineering Works",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c3.jpg",
+  },
+  {
+    company: "BlueStone Technologies",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c4.jpg",
+  },
+  {
+    company: "Orion Manufacturing Co.",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c5.jpg",
+  },
+  {
+    company: "Nova Industrial Solutions",
+    type: "Certificate of Appreciation",
+    img: "./media/certificate/c1.jpg",
+  },
+];
+
 
   return (
     <>
       <section className="py-5 bg-white">
         <div className="container">
+
+           <div className="text-center mb-5">
+          <span className="trust-badge ">
+            Trust & Recognition
+          </span>
+
+          <h2 className="fw-bold display-6 mt-4">
+            Certificates of <span className="text-warning">Appreciation</span>
+          </h2>
+
+          <p className="text-muted mt-3 mx-auto" style={{ maxWidth: "820px" }}>
+            Recognized by industry leaders for delivering reliable business
+            automation and Google Workspace solutions.
+          </p>
+        </div>
           <div className="row g-4 justify-content-center">
             {certificates.map((cert, i) => (
               <div key={i} className="col-lg-4 col-md-6">
                 <div className="cert-card h-100">
-                  <div className="cert-img-wrap">
+                  <div className="cert-img-wrap p-4">
                     <img
                       src={cert.img}
                       alt={cert.company}

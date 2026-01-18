@@ -76,11 +76,41 @@
   z-index: 1000;
   padding: 22px;
 }
+.mega-dropdown-service {
+  position: absolute;
+  top: calc(100% + 12px);
+  /* left: 50%; */
+  transform: translateX(-48%);
+
+  width: 100%;
+  max-width: 1400px;
+
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 22px;
+}
+.mega-dropdown-product {
+  position: absolute;
+  top: calc(100% + 12px);
+  /* left: 50%; */
+  transform: translateX(-37%);
+
+  width: 100%;
+  max-width: 1400px;
+
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 22px;
+}
 
 
 
 .services-dropdown {
-  width: 1000px;
+  width: 1120px;
 }
 
 .company-dropdown {
@@ -96,7 +126,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  /* gap: 24px; */
 }
 
 .service-card {
@@ -168,6 +198,80 @@
   color: #d4a300;
 }
 
+
+
+
+
+
+
+/* Card */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #eef0f4;
+  border-radius: 20px;
+  /* padding: 24px; */
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  border-color: #ffe08a;
+}
+
+/* Icon box */
+.service-icon {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #fff3d6;
+  align-items: center;
+  justify-content: center;
+  color: #d39e00;
+  font-size: 22px;
+}
+
+/* Content */
+.service-content h5 {
+  font-size: 18px;
+  color: #111827;
+}
+
+.service-content p {
+  font-size: 14px;
+  /* line-height: 1.6; */
+}
+
+/* Feature list */
+.service-features li {
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+  font-size: 14px;
+  color: #374151;
+  /* margin-bottom: 10px; */
+}
+
+.service-features .dot {
+  width: 8px;
+  height: 8px;
+  background: #f4b400;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Learn more */
+.service-link {
+  font-weight: 500;
+  color: #d39e00;
+  text-decoration: none;
+}
+
+.service-link:hover {
+  text-decoration: underline;
+}
+
+
 /* Company Grid */
 .company-grid {
   display: grid;
@@ -193,21 +297,38 @@
 .company-icon {
   width: 48px;
   height: 48px;
-  background: #fff8e6;
+  background: #fff6dc;          /* soft golden background */
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: var(--color-primary-yellow);
+  color: #d4a017;               /* golden icon */
   flex-shrink: 0;
 }
 
-.company-content h3 {
+.company-content h6 {
   font-size: 15px;
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+/* Golden "Learn more" */
+.company-content span {
+  color: #d4a017;               /* golden text */
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+/* Hover effect (optional but premium) */
+.company-card:hover .company-content h6 {
+  color: #8a6d1d;
+}
+
+.company-card:hover .company-content span {
+  color: #b8960f;
 }
 
 .company-link {
@@ -218,36 +339,14 @@
 
 /* Company Feature Section */
 .company-feature {
-  background: linear-gradient(135deg, var(--color-primary-yellow) 0%, #d4a300 100%);
+  background:var(--gradient-primary);
   border-radius: 16px;
   padding: 32px;
   color: white;
 }
 
-.company-feature-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  margin-bottom: 16px;
-}
 
-.company-feature-content h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
 
-.company-feature-content p {
-  font-size: 14px;
-  opacity: 0.95;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
 
 .btn-feature {
   display: inline-block;

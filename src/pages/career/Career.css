@@ -1,0 +1,87 @@
+.career-card {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 24px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.career-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: #fff3d6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #0f0f0e;
+}
+
+
+
+
+
+
+.job-card {
+  border: 1px solid #eee;
+  border-radius: 18px;
+  padding: 24px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.salary {
+  color: #f4b400;
+  font-weight: 700;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.job-meta svg {
+  margin-right: 6px;
+}
+
+.exp {
+  margin-left: auto;
+  color: #777;
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 8px 8px 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+.apply-btn {
+  background: #FFD84D;
+  border: none;
+  color: #f8f3f3;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 10px;
+}
+
+.apply-btn:hover {
+  background: #e0aa06;
+}
