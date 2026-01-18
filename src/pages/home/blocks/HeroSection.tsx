@@ -1,6 +1,5 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useEffect } from "react";
 
 import { MdArrowOutward, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
