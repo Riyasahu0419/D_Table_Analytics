@@ -506,7 +506,7 @@ import {
   FaRegUserCircle,
 } from "react-icons/fa";
 import "./Header.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const servicesData = [
   {
@@ -696,9 +696,9 @@ const Header: React.FC = () => {
     >
       <div className="container">
         {/* Logo */}
-        <a className="navbar-brand" href="/" onClick={closeMobileMenu}>
+        <Link className="navbar-brand" to="/" onClick={closeMobileMenu}>
           <img src="./media/logo/logo.png" alt="Smart IT Box" height={42} />
-        </a>
+        </Link>
 
         {/* Mobile Toggle */}
         <button
@@ -715,15 +715,15 @@ const Header: React.FC = () => {
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto gap-1">
             <li>
-              <a href="/certificate" className="nav-pill" onClick={closeMobileMenu}>
+              <Link to="/certificate" className="nav-pill" onClick={closeMobileMenu}>
                 Certificate
-              </a>
+              </Link>
             </li>
 
             {/* Product Dropdown */}
             <li className="dropdown">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className={`nav-pill ${
                   activeDropdown === "product" ? "active" : ""
                 }`}
@@ -739,7 +739,7 @@ const Header: React.FC = () => {
                     activeDropdown === "product" ? "rotate" : ""
                   }`}
                 />
-              </a>
+              </Link>
               {activeDropdown === "product" && (
                 <div className="mega-dropdown-product company-dropdown mt-2">
                   <div className="mega-dropdown-content container-fluid">
@@ -907,8 +907,8 @@ const Header: React.FC = () => {
                         <div className="row g-4">
                           {companyData.map((item, index) => (
                             <div key={index} className="col-lg-4 col-md-6 col-12">
-                              <a
-                                href={item.path}
+                              <Link
+                                to={item.path}
                                 className="company-card d-flex align-items-start gap-3 p-3 h-100 text-decoration-none border rounded-3"
                                 onClick={closeMobileMenu}
                               >
@@ -922,7 +922,7 @@ const Header: React.FC = () => {
                                     Learn more →
                                   </span>
                                 </div>
-                              </a>
+                              </Link>
                             </div>
                           ))}
                         </div>
@@ -976,13 +976,13 @@ const Header: React.FC = () => {
               size={20}
               style={{ cursor: "pointer", marginRight: "12px" }}
             />
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="nav-pill nav-pill-cta"
               onClick={closeMobileMenu}
             >
               Talk to us →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
