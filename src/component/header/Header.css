@@ -1,7 +1,32 @@
-/* Header Navbar */
+/* Header default (transparent) */
+.navbar.header-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+
+  --bs-navbar-bg: transparent;
+  background-color: transparent !important;
+}
+
+.navbar.header-navbar.header-scrolled {
+  --bs-navbar-bg: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 .header-navbar {
-  background: #fff;
+  background: transparent;
   padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+/* When scrolled */
+.header-navbar.header-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Navigation Pills */
@@ -368,5 +393,30 @@
 @media (max-width: 992px) {
   .mega-dropdown {
     display: none;
+  }
+}
+
+/* Hide desktop menu in mobile */
+@media (max-width: 991px) {
+  .navbar-nav {
+    display: none !important;
+  }
+
+  /* Mobile icons at top */
+  .mobile-icons {
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile menu */
+  .mobile-menu a {
+    padding: 8px 0;
+    display: block;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .mobile-menu h6 {
+    margin-bottom: 8px;
   }
 }

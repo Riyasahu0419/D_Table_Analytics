@@ -175,7 +175,7 @@ const certificates = [
   return (
     <>
       <section className="py-5 bg-white">
-        <div className="container">
+        <div className="container " style={{marginTop:'5%'}}>
 
            <div className="text-center mb-5">
           <span className="trust-badge ">

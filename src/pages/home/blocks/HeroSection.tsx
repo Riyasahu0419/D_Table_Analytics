@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
       </nav> */}
 
       {/* Hero Section */}
-      <section className="py-5 position-relative overflow-hidden bg-light">
+      <section className="py-5 position-relative overflow-hidden bg-light mt-4">
         {/* ONLY KEYFRAMES – NO CLASSES */}
         <style>{`
     @keyframes dotPulse {
@@ -79,7 +79,7 @@ const HeroSection: React.FC = () => {
     }
   `}</style>
 
-        <div className="container">
+        <div className="container" style={{marginTop:'5%'}}>
           <div className="row align-items-center">
             {/* LEFT */}
             <div className="col-lg-6">

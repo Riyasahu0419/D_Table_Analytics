@@ -26,3 +26,10 @@ background-color: var(--color-white);
 }
 
 
+
+/* Large screens: add 10% top margin */
+@media (min-width: 992px) {
+  .signup-wrapper {
+    margin-top: 10%;
+  }
+}

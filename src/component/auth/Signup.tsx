@@ -55,13 +55,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center mt-5">
-      <div className="card p-4" style={{ maxWidth: 400, width: "100%" }}>
-        <h4 className="text-center mb-3">Sign Up</h4>
+    // <div className="container d-flex justify-content-center align-items-center md-mt-5" style={{marginTop:"10%"}}>
+      <div className="container d-flex justify-content-center align-items-center mt-5 signup-mt vh-100">
+
+
+      <div className="card p-3" style={{ maxWidth: 400, width: "100%" }}>
+        <h4 className="text-center">Sign Up</h4>
 
         <form onSubmit={handleSubmit} noValidate>
           {/* NAME */}
-          <div className="mb-3">
+          <div className="mb-1">
             <label className="form-label">Name</label>
             <input
               className="form-control"
@@ -75,7 +78,7 @@ const Signup = () => {
           </div>
 
           {/* EMAIL */}
-          <div className="mb-3">
+          <div className="mb-1">
             <label className="form-label">Email</label>
             <input
               className="form-control"
@@ -90,7 +93,7 @@ const Signup = () => {
           </div>
 
           {/* PASSWORD */}
-          <div className="mb-3">
+          <div className="mb-1">
             <label className="form-label">Password</label>
             <div className="input-group">
               <input
@@ -114,7 +117,7 @@ const Signup = () => {
           </div>
 
           {/* CONFIRM PASSWORD */}
-          <div className="mb-3">
+          <div className="mb-2">
             <label className="form-label">Confirm Password</label>
             <div className="input-group">
               <input

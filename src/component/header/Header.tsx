@@ -1,56 +1,6 @@
-// import React from "react";
-// import "./header.css";
-// import { FiSearch } from "react-icons/fi";
-
-// const navItems = ["Certificate", "Products", "Services", "Company"];
-
-// const Header: React.FC = () => {
-//   return (
-//     <nav className="navbar navbar-expand-lg sticky-top header-navbar">
-//       <div className="container">
-
-//         {/* Logo */}
-//         <a className="navbar-brand" href="/">
-//           <img src="./media/logo/logo.png" alt="Smart IT Box" height={42} />
-//         </a>
-
-//         {/* Mobile Toggle */}
-//         <button
-//           className="navbar-toggler"
-//           type="button"
-//           data-bs-toggle="collapse"
-//           data-bs-target="#mainNavbar"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-
-//         {/* Navigation */}
-//         <div className="collapse navbar-collapse" id="mainNavbar">
-//           <ul className="navbar-nav mx-auto gap-1">
-//             {navItems.map(item => (
-//               <li key={item}>
-//                 <a href="#" className="nav-pill">
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-// <FiSearch size={20}/>
-//           <a href="/contact" className="nav-pill nav-pill-cta">
-//             Talk to us →
-//           </a>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Header;
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiSearch, FiChevronDown } from "react-icons/fi";
 import {
-  
   FaUsers,
   FaAward,
   FaFileAlt,
@@ -59,15 +9,11 @@ import {
   FaBalanceScale,
   FaPhone,
   FaLightbulb,
- 
   FaFlask,
   FaPalette,
-  
   FaLock,
- 
   FaDatabase,
   FaMobile,
- 
   FaRegUserCircle,
 } from "react-icons/fa";
 import "./Header.css";
@@ -170,12 +116,12 @@ const companyData = [
   },
 ];
 
-
 const ProductData = [
   {
     icon: <FaAward />,
     title: "Enterprise Solutions",
-    description: "Scalable and secure software solutions for growing businesses",
+    description:
+      "Scalable and secure software solutions for growing businesses",
   },
   {
     icon: <FaUsers />,
@@ -200,7 +146,8 @@ const ProductData = [
   {
     icon: <FaShieldAlt />,
     title: "Security & Compliance",
-    description: "Advanced protection and compliance for critical business data",
+    description:
+      "Advanced protection and compliance for critical business data",
   },
   {
     icon: <FaBalanceScale />,
@@ -214,10 +161,10 @@ const ProductData = [
   },
 ];
 
-
 const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-const navigate=useNavigate()
+  const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
   const toggleDropdown = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
@@ -226,11 +173,23 @@ const navigate=useNavigate()
     setActiveDropdown(null);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg sticky-top header-navbar">
-      <div className="container">
+    // <nav className="navbar navbar-expand-lg sticky-top header-navbar">
+    <nav
+      className={`navbar navbar-expand-lg sticky-top header-navbar ${
+        scrolled ? "header-scrolled" : ""
+      }`}
+    >
+      <div className="container p-2">
         {/* Logo */}
         <a className="navbar-brand" href="/">
           <img src="./media/logo/logo.png" alt="Smart IT Box" height={42} />
@@ -274,7 +233,7 @@ const navigate=useNavigate()
                 />
               </a>
               {activeDropdown === "product" && (
-                <div className="mega-dropdown-product company-dropdown mt-1">
+                <div className="mega-dropdown-product company-dropdown mt-2">
                   <div className="mega-dropdown-content container-fluid">
                     <div className="row g-4 align-items-stretch">
                       {/* LEFT: 3-column card grid */}
@@ -314,12 +273,12 @@ const navigate=useNavigate()
                           </div>
 
                           <div>
-                            <h4 className="fw-bold">
-                              Innovation Lab
-                            </h4>
+                            <h4 className="fw-bold">Innovation Lab</h4>
 
                             <p className="small my-3">
-                            Experience the future of digital transformation with our adaptive AI solutions that learn and scale in real-time.
+                              Experience the future of digital transformation
+                              with our adaptive AI solutions that learn and
+                              scale in real-time.
                             </p>
                           </div>
 
@@ -358,7 +317,7 @@ const navigate=useNavigate()
                 />
               </a>
               {activeDropdown === "services" && (
-                <div className="mega-dropdown-service services-dropdown mt-1">
+                <div className="mega-dropdown-service services-dropdown mt-2">
                   <div className="mega-dropdown-content">
                     <div className="services-grid row g-4">
                       {servicesData.map((service, index) => (
@@ -428,7 +387,7 @@ const navigate=useNavigate()
                 />
               </a>
               {activeDropdown === "company" && (
-                <div className="mega-dropdown company-dropdown mt-1">
+                <div className="mega-dropdown company-dropdown mt-2">
                   <div className="mega-dropdown-content container-fluid">
                     <div className="row g-4 align-items-stretch">
                       {/* LEFT: 3-column card grid */}
@@ -490,9 +449,8 @@ const navigate=useNavigate()
             </li>
           </ul>
 
-          
-          <FaRegUserCircle 
-          onClick={()=>navigate("/sign-up")}
+          <FaRegUserCircle
+            onClick={() => navigate("/sign-up")}
             size={20}
             style={{ cursor: "pointer", marginRight: "12px" }}
           />
@@ -503,8 +461,6 @@ const navigate=useNavigate()
           <a href="/contact" className="nav-pill nav-pill-cta">
             Talk to us →
           </a>
-
-          
         </div>
       </div>
 
@@ -517,3 +473,8 @@ const navigate=useNavigate()
 };
 
 export default Header;
+
+
+
+
+

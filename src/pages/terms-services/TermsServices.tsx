@@ -11,7 +11,7 @@ const TermsServices: React.FC = () => {
         <section className="text-center my-5">
           <div className="" />
 
-          <Container className="position-relative">
+          <Container className="position-relative" style={{marginTop:'8%'}}>
             {/* Breadcrumbs */}
             <div className="breadcrumbs">
               <span>Home</span>

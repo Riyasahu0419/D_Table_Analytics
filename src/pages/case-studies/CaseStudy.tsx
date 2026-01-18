@@ -12,7 +12,7 @@ const CaseStudy: React.FC = () => {
         <section className="about-hero text-center">
           <div className="hero-overlay" />
 
-          <Container className="position-relative">
+          <Container className="position-relative" style={{marginTop:'5%'}}>
             {/* Breadcrumbs */}
             <div className="breadcrumbs">
               <span>Home</span>

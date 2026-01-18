@@ -13,7 +13,7 @@ const Team: React.FC = () => {
       <section className="about-hero text-center  mb-5" >
         <div className="hero-overlay" />
 
-        <Container className="position-relative">
+        <Container className="position-relative" style={{marginTop:'5%'}}>
           {/* Breadcrumbs */}
           <div className="breadcrumbs">
             <span>Home</span>
