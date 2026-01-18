@@ -7,105 +7,36 @@ import { MdArrowOutward, MdOutlineKeyboardArrowRight } from "react-icons/md";
 const HeroSection: React.FC = () => {
  
 
-  const targetStats = [750, 2400, 1200, 98];
+  // const targetStats = [750, 2400, 1200, 98];
 
   // Animate statistics counter
-  useEffect(() => {
-    const duration = 2000;
-    const steps = 60;
-    const increment = duration / steps;
+  // useEffect(() => {
+  //   const duration = 2000;
+  //   const steps = 60;
+  //   const increment = duration / steps;
 
-    const intervals = targetStats.map((target, index) => {
-      let current = 0;
-      const step = target / steps;
+  //   const intervals = targetStats.map((target, index) => {
+  //     let current = 0;
+  //     const step = target / steps;
 
-      return setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(intervals[index]);
-        }
-        setAnimatedStats((prev) => {
-          const newStats = [...prev];
-          newStats[index] = Math.floor(current);
-          return newStats;
-        });
-      }, increment);
-    });
+  //     return setInterval(() => {
+  //       current += step;
+  //       if (current >= target) {
+  //         current = target;
+  //         clearInterval(intervals[index]);
+  //       }
+  //       setAnimatedStats((prev:any) => {
+  //         const newStats = [...prev];
+  //         newStats[index] = Math.floor(current);
+  //         return newStats;
+  //       });
+  //     }, increment);
+  //   });
 
-    return () => intervals.forEach((interval) => clearInterval(interval));
-  }, []);
+  //   return () => intervals.forEach((interval) => clearInterval(interval));
+  // }, []);
 
-  const services = [
-    "Web Development",
-    "Process Automation",
-    "Google Sheets",
-    "FMS Systems",
-    "Full Kitting",
-    "Production Planning",
-    "PMS Solutions",
-    "Machine-Wise Planning",
-    "Workflow Optimization",
-    "Data Integration",
-    "Real-time Analytics",
-    "Custom Dashboards",
-    "API Development",
-    "Cloud Solutions",
-    "Mobile Applications",
-    "UI/UX Design",
-  ];
 
-  const workProcess = [
-    {
-      number: "01",
-      title: "Requirement Gathering",
-      description:
-        "We begin by understanding your business needs, workflows, pain points, and the goals you want to achieve with the web app.",
-      phase: "Phase 1",
-    },
-    {
-      number: "02",
-      title: "Planning & Wireframing",
-      description:
-        "We create a visual outline (wireframe) of the application to map out key features, user journeys, and how the data will flow.",
-      phase: "Phase 2",
-    },
-    {
-      number: "03",
-      title: "Design",
-      description:
-        "Clean, responsive, and intuitive UI/UX design that ensures your web app is easy to use across devices.",
-      phase: "Phase 3",
-    },
-    {
-      number: "04",
-      title: "Development",
-      description:
-        "We build your custom solution using the latest web technologies, with smart integration of tools like Google Sheets, APIs, WhatsApp, email, and more.",
-      phase: "Phase 4",
-    },
-    {
-      number: "05",
-      title: "Testing & Feedback",
-      description:
-        "The app goes through rigorous testing to ensure functionality, speed, and security — followed by client feedback and revisions.",
-      phase: "Phase 5",
-    },
-    {
-      number: "06",
-      title: "Deployment",
-      description:
-        "We host and deploy your web app, ensuring it is live, stable, and ready for users.",
-      phase: "Phase 6",
-    },
-    {
-      number: "07",
-      title: "Training & Support",
-      description:
-        "We provide complete walkthroughs, documentation, and ongoing support to help your team get the most out of your new system.",
-      phase: "Phase 7",
-    },
-  ];
 
   return (
     <div
